@@ -1,0 +1,22 @@
+<div class="row">
+
+
+    <div class="col-md-4" *ngFor="let p of products">
+
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" [src]="p.image" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Title : {{p.title}}</h5>
+                <p class="card-text">Quantity : {{p.quantity}}</p>
+                <p class="card-text">Price : {{p.price}}</p>
+                <p class="card-text">Like : {{p.like}}</p>
+
+                <button class="btn btn-info" (click)="increment(p)">Like <3</button>
+                <button class="btn btn-primary" [routerLink]="['/details',p.id]">Details</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

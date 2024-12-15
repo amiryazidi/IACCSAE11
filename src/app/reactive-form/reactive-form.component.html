@@ -1,0 +1,58 @@
+<h1> Form Control</h1>
+
+
+<label>Login</label>
+
+<input type="text" class="form-control" placeholder="Enter login" [formControl]="login">
+<div class="alert alert-danger" *ngIf="login.invalid && login.touched">
+    <p *ngIf="login.getError('required')">login obligatoire</p>
+    <p *ngIf="login.getError('minlength')">login minLength 3</p>
+</div>
+
+<label>password</label>
+<input type="text" class="form-control" placeholder="Enter password" [formControl]="pwd">
+<div class="alert alert-danger" *ngIf="pwd.invalid && pwd.touched">
+    <p *ngIf="pwd.getError('required')">password Obligaoire</p>
+    <p *ngIf="pwd.getError('maxlength')">password minLength 6</p>
+
+</div>
+
+<label>Email</label>
+<input type="text" class="form-control" placeholder="Enter password" [formControl]="email">
+<div class="alert alert-danger" *ngIf="email.invalid && email.touched">
+    <p *ngIf="pwd.getError('required')">email Obligaoire</p>
+
+</div>
+<button type="submit" class="btn btn-primary" [disabled]="login.invalid  || pwd.invalid">Submit</button>
+
+
+<h1> Form group</h1>
+
+
+<form [formGroup]="formLogin"> <label>Login</label>
+
+
+    <input type="text" class="form-control" placeholder="Enter login" formControlName="login">
+    <div class="alert alert-danger" *ngIf="this.formLogin.controls['login'].invalid && this.formLogin.controls['login'].touched">
+        <p *ngIf="this.formLogin.controls['login'].getError('required')">login obligatoire</p>
+        <p *ngIf="this.formLogin.controls['login'].getError('minlength')">login minLength 3</p>
+    </div>
+
+    <label>password</label>
+    <input type="text" class="form-control" placeholder="Enter password" formControlName="pwd">
+    <div class="alert alert-danger" *ngIf="this.formLogin.controls['pwd'].invalid  && this.formLogin.controls['pwd']">
+        <p *ngIf="this.formLogin.controls['pwd'].getError('required')">password Obligaoire</p>
+        <p *ngIf="this.formLogin.controls['pwd'].getError('maxlength')">password minLength 6</p>
+
+    </div>
+
+    <label>Email</label>
+    <input type="text" class="form-control" placeholder="Enter password" formControlName="email">
+    <div class="alert alert-danger" *ngIf="this.formLogin.controls['email'].invalid && this.formLogin.controls['email'].touched">
+        <p *ngIf="pwd.getError('required')">email Obligaoire</p>
+
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="this.formLogin.invalid">Submit</button>
+
+
+</form>

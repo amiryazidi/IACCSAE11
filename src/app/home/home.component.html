@@ -1,0 +1,26 @@
+{{title}}
+<input class="form-control" type="text" placeholder="search by age" [(ngModel)]="AgeMax">
+<table class="table" border="2">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>age</th>
+        <th>email</th>
+        <th>action</th>
+    </tr>
+    <tr *ngFor="let i of user">
+        <ng-container *ngIf="i.age>=AgeMax || AgeMax==null">
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.email}}</td>
+            <td><button class="btn btn-info" [routerLink]="['/detailProd',i.id]">Detail</button></td>
+        </ng-container>
+    </tr>
+</table>
+<button class="btn btn-primary" (click)="show()">save</button>
+<br>
+<input class="form-control" type="text" placeholder="choose color" [(ngModel)]="color">
+<p [style.backgroundColor]="color">
+    property binding
+</p>

@@ -1,0 +1,46 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h2>Détails de la résidence</h2>
+        </div>
+        <div class="card-body">
+            <!-- Nom de la résidence -->
+            <h3 class="card-title">{{ residence.name }}</h3>
+
+            <!-- Image de la résidence -->
+            <div class="text-center my-3">
+                <img [src]="residence.image" alt="{{ residence.name }}" class="img-fluid rounded" style="max-height: 300px; object-fit: cover;" />
+            </div>
+
+            <!-- Adresse -->
+            <p *ngIf="residence.address !== 'inconnu'" class="text-muted">
+                <strong>Adresse :</strong> {{ residence.address }}
+            </p>
+
+            <!-- Statut avec NgSwitch -->
+            <div [ngSwitch]="residence.status">
+                <p *ngSwitchCase="'Disponible'" class="badge bg-success">✅ Disponible</p>
+                <p *ngSwitchCase="'En Construction'" class="badge bg-warning text-dark">🚧 En Construction</p>
+                <p *ngSwitchCase="'Vendu'" class="badge bg-danger">❌ Vendu</p>
+                <p *ngSwitchDefault class="badge bg-secondary">⚪ Statut inconnu</p>
+            </div>
+
+            <!-- Description -->
+            <div class="mt-3">
+                <p>
+                    <strong>Status :</strong> {{ residence.status || 'Non disponible' }}
+                </p>
+            </div>
+
+            <!-- Boutons -->
+            <div class="mt-4 d-flex justify-content-between">
+                <button class="btn btn-primary" (click)="navigateToLocation()">
+                  Voir l'emplacement
+              </button>
+                <button class="btn btn-secondary" [routerLink]="['/residence']">
+                  Retour à la liste
+              </button>
+            </div>
+        </div>
+    </div>
+</div>

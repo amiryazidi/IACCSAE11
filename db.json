@@ -1,0 +1,9 @@
+{
+    "residences": [{
+        "id": "fbe9",
+        "name": "test",
+        "address": "ariana",
+        "image": "../../assets/images/R1.jpg",
+        "status": "Available"
+    }]
+}
