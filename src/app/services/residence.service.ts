@@ -33,4 +33,7 @@ export class ResidenceService {
   deleteResidence(id:number):Observable<any>{
     return this.http.delete(`${this.apiEndPoint}/${id}`);
   }
+  updateResidence(Rs:Residence, id:number):Observable<Residence>{
+    return this.http.put<Residence>(this.apiEndPoint+'/'+id,Rs)
+  }
 }

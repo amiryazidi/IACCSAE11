@@ -2,7 +2,7 @@
 <div class="search-bar mb-4">
     <input type="text" class="form-control" placeholder="Rechercher par adresse" [(ngModel)]="filterAddress" />
 </div>
-
+<button [routerLink]="['/addRes']">add Residence </button>
 <!-- Conteneur des résidences -->
 <div class="container">
     <div class="row">
@@ -38,6 +38,9 @@
                     <button class="btn btn-outline-info btn-sm" [routerLink]="['/detailR', residence.id]">
                       Details
                   </button>
+                    <button class="btn btn-outline-info btn-sm" [routerLink]="['/updateRes', residence.id]">
+                    update
+                </button>
                     <button class="btn btn-outline-danger btn-sm" (click)="supp(residence.id)">
                       Delete
                   </button>

@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'addRes'  , component: AddResidenceComponent},
   {path: 'details/:id'  , component: DetailProdComponent},
   {path: 'detailR/:id'  , component: DetailResidenceComponent},
+  {path: 'updateRes/:id'  , component: AddResidenceComponent },
   {path: 'addP'  , component: AddProductComponent},
   {path: '**' , component : NotFoundComponent}, //path not found
 

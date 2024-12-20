@@ -1,9 +1,11 @@
 {
-    "residences": [{
-        "id": "fbe9",
-        "name": "test",
-        "address": "ariana",
-        "image": "../../assets/images/R1.jpg",
-        "status": "Available"
-    }]
+  "residences": [
+    {
+      "name": "amir",
+      "address": "arianaaaazerg",
+      "image": "../../assets/images/R1.jpg",
+      "status": "Available",
+      "id": "fbe9"
+    }
+  ]
 }
